@@ -1,0 +1,34 @@
+### 1. Проверка статуса
+GET http://localhost:3000/status
+
+### 2. Добавляем BTC (с правильным токеном)
+POST http://localhost:3000/api/cryptos
+Content-Type: application/json
+Authorization: Bearer my_super_secret_token_123
+
+{
+  "symbol": "BTC",
+  "name": "Bitcoin"
+}
+
+### 3. Получаем список
+GET http://localhost:3000/api/cryptos
+Authorization: Bearer my_super_secret_token_123
+
+### 4. Получить историю цен для BTC (id=1)
+GET http://localhost:3000/api/cryptos/1/history
+Authorization: Bearer my_super_secret_token_123
+
+### 5. Добавляем ETH
+POST http://localhost:3000/api/cryptos
+Content-Type: application/json
+Authorization: Bearer my_super_secret_token_123
+
+{
+  "symbol": "ETH",
+  "name": "Ethereum"
+}
+
+### 6. Удаляем BTC (id=1)
+DELETE http://localhost:3000/api/cryptos/1
+Authorization: Bearer my_super_secret_token_123
